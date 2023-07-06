@@ -9,17 +9,23 @@ const getUserDataService = async (imei: string): Promise<IUserDataTypes> => {
     tgUid: null,
   };
   try {
-    const usersData = await RedisServices.getData(CONSTANTS.ERH_USERS_TABLE);
-    usersData?.forEach((v: string): void => {
-      const tData: IUserDataTypes = JSON.parse(v);
-      if (tData?.imei === imei) {
-        result = {
-          imei: tData?.imei,
-          uid: tData?.uid,
-          tgUid: tData?.tgUid,
-        };
-      }
-    });
+    const position = await RedisServices.getPosition(
+      CONSTANTS.ERH_IMEI_TABLE,
+      imei
+    );
+    if (position !== null) {
+      const usersData = JSON.parse(
+        await RedisServices.getDataFromPosition(
+          CONSTANTS.ERH_USERS_TABLE,
+          position
+        )
+      );
+      result = {
+        imei: usersData?.imei,
+        uid: usersData?.uid,
+        tgUid: usersData?.tgUid,
+      };
+    }
   } catch (e) {
     console.log((e as Error).message);
   }
