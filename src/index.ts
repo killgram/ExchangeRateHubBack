@@ -1,8 +1,9 @@
 import express, { Application } from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
-
 const morgan = require("morgan");
+
+import { getWorkStatus } from "./modules";
 
 const app: Application = express();
 const PORT = process.env.PORT || 9987;
@@ -12,6 +13,9 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan("dev")); // logger
+
+// GET
+app.get("/status", getWorkStatus);
 
 // listener
 app.listen(PORT, (): void => {
