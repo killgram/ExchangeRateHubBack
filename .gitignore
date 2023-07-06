@@ -132,3 +132,4 @@ dist
 # custom
 package-lock.json
 .idea
+src/configurations/Constants.ts

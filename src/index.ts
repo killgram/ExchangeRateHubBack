@@ -2,6 +2,7 @@ import express, { Application } from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 const morgan = require("morgan");
+import { initRedisClient } from "./configurations";
 
 import { getWorkStatus } from "./modules";
 
@@ -16,6 +17,9 @@ app.use(morgan("dev")); // logger
 
 // GET
 app.get("/status", getWorkStatus);
+
+// init redis
+initRedisClient().then((_) => {});
 
 // listener
 app.listen(PORT, (): void => {
