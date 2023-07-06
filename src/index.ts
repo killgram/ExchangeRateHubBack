@@ -4,7 +4,8 @@ import bodyParser from "body-parser";
 const morgan = require("morgan");
 import { initRedisClient } from "./configurations";
 
-import { getWorkStatus } from "./modules";
+// modules
+import { getWorkStatus, signIn } from "./modules";
 
 const app: Application = express();
 const PORT = process.env.PORT || 9987;
@@ -17,6 +18,7 @@ app.use(morgan("dev")); // logger
 
 // GET
 app.get("/status", getWorkStatus);
+app.get("/signIn", signIn);
 
 // init redis
 initRedisClient().then((_) => {});
