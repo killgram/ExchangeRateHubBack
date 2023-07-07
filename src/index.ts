@@ -3,9 +3,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 const morgan = require("morgan");
 import { initRedisClient } from "./configurations";
-
-// modules
-import { getWorkStatus, signIn } from "./modules";
+import { AdminRouter, CommonRouter, MobileRouter } from "./routes";
 
 const app: Application = express();
 const PORT = process.env.PORT || 9987;
@@ -16,9 +14,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan("dev")); // logger
 
-// GET
-app.get("/status", getWorkStatus);
-app.get("/signIn", signIn);
+// Mobile
+app.use("/mobile", MobileRouter);
+
+// Common
+app.use("/common", CommonRouter);
+
+// Admin
+app.use("/admin", AdminRouter);
 
 // init redis
 initRedisClient().then((_) => {});

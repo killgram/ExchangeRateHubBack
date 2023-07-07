@@ -22,4 +22,8 @@ const addData = async (table: string, data: string) => {
   return await client.rPush(table, data);
 };
 
-export { getPosition, getData, addData, getDataFromPosition };
+const deleteData = async (table: string, data: string) => {
+  return await client.LREM(table, 1, data);
+};
+
+export { getPosition, getData, addData, getDataFromPosition, deleteData };
