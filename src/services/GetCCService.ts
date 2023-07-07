@@ -1,4 +1,4 @@
-import { CONSTANTS } from "../configurations";
+import { CONSTANTS, CurrencyEnum, CurrencyImgEnum } from "../configurations";
 import { RedisServices } from "./index";
 import { IComparedCurrencyDataTypes } from "../types";
 
@@ -11,7 +11,40 @@ const getCCService = async () => {
     if (table) {
       table?.forEach((v: string) => {
         const tableItem: IComparedCurrencyDataTypes = JSON.parse(v);
-        data.push(tableItem);
+        switch (tableItem?.comparedCurrency) {
+          case CurrencyEnum.KZT: {
+            data.push({
+              ...tableItem,
+              imgUrl: CurrencyImgEnum.KZT,
+            });
+            break;
+          }
+          case CurrencyEnum.EUR: {
+            data.push({
+              ...tableItem,
+              imgUrl: CurrencyImgEnum.EUR,
+            });
+            break;
+          }
+          case CurrencyEnum.USD: {
+            data.push({
+              ...tableItem,
+              imgUrl: CurrencyImgEnum.USD,
+            });
+            break;
+          }
+          case CurrencyEnum.RUB: {
+            data.push({
+              ...tableItem,
+              imgUrl: CurrencyImgEnum.RUB,
+            });
+            break;
+          }
+          default: {
+            data.push(tableItem);
+            break;
+          }
+        }
       });
     }
   } catch (e) {

@@ -6,4 +6,5 @@ export interface IComparedCurrencyDataTypes {
     value: string;
   }>;
   uid: string;
+  imgUrl?: string;
 }

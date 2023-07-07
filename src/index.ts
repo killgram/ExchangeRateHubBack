@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 const morgan = require("morgan");
 import { initRedisClient } from "./configurations";
 import { AdminRouter, CommonRouter, MobileRouter } from "./routes";
+const path = require("path");
 
 const app: Application = express();
 const PORT = process.env.PORT || 9987;
@@ -22,6 +23,9 @@ app.use("/common", CommonRouter);
 
 // Admin
 app.use("/admin", AdminRouter);
+
+// static
+app.use("/orchid", express.static(path.join(__dirname, "public")));
 
 // init redis
 initRedisClient().then((_) => {});
