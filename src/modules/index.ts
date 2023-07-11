@@ -6,6 +6,7 @@ import { deleteComparedCurrency } from "./DeleteComparedCurrency";
 import { getForwardCurrency } from "./GetForwardCurrency";
 import { addForwardCurrency } from "./AddForwardCurrency";
 import { deleteForwardCurrency } from "./DeleteForwardCurrency";
+import { getCourses } from "./GetCourses";
 
 export {
   getWorkStatus,
@@ -16,4 +17,5 @@ export {
   getForwardCurrency,
   addForwardCurrency,
   deleteForwardCurrency,
+  getCourses,
 };
