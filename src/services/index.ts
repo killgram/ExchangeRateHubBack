@@ -10,6 +10,7 @@ import { getCoursesService } from "./GetCoursesService";
 import { updateUserService } from "./UpdateUserService";
 import { deleteUserService } from "./DeleteUserService";
 import { userUsageService } from "./UserUsageService";
+import { getUserUsageService } from "./GetUserUsageService";
 
 export {
   isExistUserService,
@@ -24,4 +25,5 @@ export {
   updateUserService,
   deleteUserService,
   userUsageService,
+  getUserUsageService,
 };

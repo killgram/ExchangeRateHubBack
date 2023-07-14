@@ -8,6 +8,7 @@ import {
   deleteForwardCurrency,
   getCourses,
   deleteUser,
+  getUserUsage,
 } from "../modules";
 import { authenticateEditToken } from "../middleware";
 const router: Router = express.Router();
@@ -35,5 +36,8 @@ router.get("/getCourses", authenticateEditToken, getCourses);
 
 // users
 router.delete("/deleteUser", authenticateEditToken, deleteUser);
+
+// usage
+router.get("/getUserUsage", authenticateEditToken, getUserUsage);
 
 export { router as AdminRouter };

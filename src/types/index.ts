@@ -3,6 +3,7 @@ import { IComparedCurrencyDataTypes } from "./ComparedCurrencyTypes";
 import { IForwardCurrencyDataTypes } from "./ForwardCurrencyDataTypes";
 import { IResultCurrencyType } from "./ResultCurrencyType";
 import { IMinMaxTypes } from "./MinMaxTypes";
+import { IUserUsageTypes } from "./UserUsageTypes";
 
 export {
   IUserDataTypes,
@@ -10,4 +11,5 @@ export {
   IForwardCurrencyDataTypes,
   IResultCurrencyType,
   IMinMaxTypes,
+  IUserUsageTypes,
 };
