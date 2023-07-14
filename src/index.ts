@@ -3,7 +3,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 const morgan = require("morgan");
 import { initRedisClient } from "./configurations";
-import { AdminRouter, CommonRouter, MobileRouter } from "./routes";
+import { AdminRouter, CommonRouter, MobileRouter, BotRouter } from "./routes";
 const path = require("path");
 
 const app: Application = express();
@@ -23,6 +23,9 @@ app.use("/common", CommonRouter);
 
 // Admin
 app.use("/admin", AdminRouter);
+
+// Bot
+app.use("/bot", BotRouter);
 
 // static
 app.use("/orchid", express.static(path.join(__dirname, "public")));

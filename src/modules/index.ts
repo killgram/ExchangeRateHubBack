@@ -7,6 +7,7 @@ import { getForwardCurrency } from "./GetForwardCurrency";
 import { addForwardCurrency } from "./AddForwardCurrency";
 import { deleteForwardCurrency } from "./DeleteForwardCurrency";
 import { getCourses } from "./GetCourses";
+import { connectUserToBot } from "./ConnectUserToBot";
 
 export {
   getWorkStatus,
@@ -18,4 +19,5 @@ export {
   addForwardCurrency,
   deleteForwardCurrency,
   getCourses,
+  connectUserToBot,
 };

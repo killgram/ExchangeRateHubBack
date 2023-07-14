@@ -26,4 +26,15 @@ const deleteData = async (table: string, data: string) => {
   return await client.LREM(table, 1, data);
 };
 
-export { getPosition, getData, addData, getDataFromPosition, deleteData };
+const updateData = async (table: string, data: string, index: number) => {
+  return await client.lSet(table, index, data);
+};
+
+export {
+  getPosition,
+  getData,
+  addData,
+  getDataFromPosition,
+  deleteData,
+  updateData,
+};
