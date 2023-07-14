@@ -1,3 +1,4 @@
 import * as TokenUtils from "./TokenUtils";
+import { checkInstructions } from "./CheckInstructions";
 
-export { TokenUtils };
+export { TokenUtils, checkInstructions };

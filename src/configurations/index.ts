@@ -2,6 +2,7 @@ import { CONSTANTS } from "./Constants";
 import { initRedisClient, client } from "./redisConfig";
 import { ErrorsListEnum } from "./ErrorsListEnum";
 import { CurrencyEnum, CurrencyImgEnum } from "./CurrencyEnum";
+import { InstructionsTypesEnum } from "./InstructionsTypesEnum";
 
 export {
   CONSTANTS,
@@ -10,4 +11,5 @@ export {
   ErrorsListEnum,
   CurrencyImgEnum,
   CurrencyEnum,
+  InstructionsTypesEnum,
 };

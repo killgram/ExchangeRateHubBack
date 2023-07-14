@@ -5,4 +5,5 @@ export enum ErrorsListEnum {
   NOT_FOUND_COMPARED_CURRENCY = "Not found compared currency",
   NOT_FOUND_FORWARD_CURRENCY = "Not found forward currency",
   USER_NOT_FOUND = "User not found",
+  INCORRECT_INSTRUCTIONS = "Incorrect instructions",
 }

@@ -10,6 +10,7 @@ import { getCourses } from "./GetCourses";
 import { connectUserToBot } from "./ConnectUserToBot";
 import { deleteUser } from "./DeleteUser";
 import { getUserUsage } from "./GetUserUsage";
+import { subscribe } from "./Subscribe";
 
 export {
   getWorkStatus,
@@ -24,4 +25,5 @@ export {
   connectUserToBot,
   deleteUser,
   getUserUsage,
+  subscribe,
 };
