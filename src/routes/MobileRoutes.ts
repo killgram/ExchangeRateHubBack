@@ -1,5 +1,5 @@
 import express, { Router } from "express";
-import { authenticateJWT } from "../middleware";
+import { authenticateJWT, confirmMobileRequest } from "../middleware";
 import {
   getComparedCurrency,
   getCourses,
@@ -11,6 +11,6 @@ const router: Router = express.Router();
 router.get("/signIn", signIn);
 router.get("/getComparedCurrency", authenticateJWT, getComparedCurrency);
 router.get("/getForwardCurrency", authenticateJWT, getForwardCurrency);
-router.get("/getCourses", authenticateJWT, getCourses);
+router.get("/getCourses", authenticateJWT, confirmMobileRequest, getCourses);
 
 export { router as MobileRouter };

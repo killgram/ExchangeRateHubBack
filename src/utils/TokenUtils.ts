@@ -11,4 +11,8 @@ const verifyAccessToken = (token: string): void | boolean => {
   });
 };
 
-export { generateAccessToken, verifyAccessToken };
+const decodeAccessToken = (token: string): any => {
+  return jwt.decode(token);
+};
+
+export { generateAccessToken, verifyAccessToken, decodeAccessToken };

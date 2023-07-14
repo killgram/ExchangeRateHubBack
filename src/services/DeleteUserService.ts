@@ -10,10 +10,21 @@ const deleteUserService = async (imei: string): Promise<boolean> => {
     );
     if (position !== null) {
       const userData: IUserDataTypes = await getUserDataService(String(imei));
+      const usersUsageData = JSON.parse(
+        await RedisServices.getDataFromPosition(
+          CONSTANTS.ERH_USAGE_TABLE,
+          position
+        )
+      );
+
       await RedisServices.deleteData(CONSTANTS.ERH_IMEI_TABLE, imei);
       await RedisServices.deleteData(
         CONSTANTS.ERH_USERS_TABLE,
         JSON.stringify(userData)
+      );
+      await RedisServices.deleteData(
+        CONSTANTS.ERH_USAGE_TABLE,
+        JSON.stringify(usersUsageData)
       );
     }
   } catch (e) {

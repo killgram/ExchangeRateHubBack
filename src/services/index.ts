@@ -9,6 +9,7 @@ import { getFCService } from "./GetFCService";
 import { getCoursesService } from "./GetCoursesService";
 import { updateUserService } from "./UpdateUserService";
 import { deleteUserService } from "./DeleteUserService";
+import { userUsageService } from "./UserUsageService";
 
 export {
   isExistUserService,
@@ -22,4 +23,5 @@ export {
   getCoursesService,
   updateUserService,
   deleteUserService,
+  userUsageService,
 };
