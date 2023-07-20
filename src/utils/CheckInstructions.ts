@@ -8,19 +8,15 @@ const checkInstructions = (type: string, instructions: any): boolean => {
   ) {
     return false;
   }
-
   switch (type as InstructionsTypesEnum) {
     case InstructionsTypesEnum.BEST_MAX_RATE: {
-      return !!instructions?.maxRate;
+      return !!instructions?.maxRate && typeof instructions?.gmt === "number";
     }
     case InstructionsTypesEnum.BEST_MIN_RATE: {
-      return !!instructions?.minRate;
+      return !!instructions?.minRate && typeof instructions?.gmt === "number";
     }
-    case InstructionsTypesEnum.EVERY_DAY: {
-      return true;
-    }
-    case InstructionsTypesEnum.BANK_RATE: {
-      return !!instructions?.bankUid;
+    case InstructionsTypesEnum.DAILY_RATE: {
+      return typeof instructions?.gmt === "number";
     }
     default: {
       return false;
