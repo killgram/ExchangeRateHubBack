@@ -4,6 +4,7 @@ import {
   getComparedCurrency,
   getCourses,
   getForwardCurrency,
+  getSubscription,
   signIn,
   subscribe,
 } from "../modules";
@@ -14,5 +15,6 @@ router.get("/getComparedCurrency", authenticateJWT, getComparedCurrency);
 router.get("/getForwardCurrency", authenticateJWT, getForwardCurrency);
 router.get("/getCourses", authenticateJWT, confirmMobileRequest, getCourses);
 router.post("/subscribe", authenticateJWT, subscribe);
+router.get("/getSubscription", authenticateJWT, getSubscription);
 
 export { router as MobileRouter };

@@ -4,6 +4,7 @@ import { IForwardCurrencyDataTypes } from "./ForwardCurrencyDataTypes";
 import { IResultCurrencyType } from "./ResultCurrencyType";
 import { IMinMaxTypes } from "./MinMaxTypes";
 import { IUserUsageTypes } from "./UserUsageTypes";
+import { DaemonTableItemTypes } from "./DaemonTableItemTypes";
 
 export {
   IUserDataTypes,
@@ -12,4 +13,5 @@ export {
   IResultCurrencyType,
   IMinMaxTypes,
   IUserUsageTypes,
+  DaemonTableItemTypes,
 };

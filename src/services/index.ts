@@ -12,6 +12,7 @@ import { deleteUserService } from "./DeleteUserService";
 import { userUsageService } from "./UserUsageService";
 import { getUserUsageService } from "./GetUserUsageService";
 import { setSubscribeService } from "./SetSubscribeService";
+import { getDaemonTableService } from "./GetDaemonTableService";
 
 export {
   isExistUserService,
@@ -28,4 +29,5 @@ export {
   userUsageService,
   getUserUsageService,
   setSubscribeService,
+  getDaemonTableService,
 };

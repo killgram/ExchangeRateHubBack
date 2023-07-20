@@ -11,6 +11,7 @@ import { connectUserToBot } from "./ConnectUserToBot";
 import { deleteUser } from "./DeleteUser";
 import { getUserUsage } from "./GetUserUsage";
 import { subscribe } from "./Subscribe";
+import { getSubscription } from "./getSubscription";
 
 export {
   getWorkStatus,
@@ -26,4 +27,5 @@ export {
   deleteUser,
   getUserUsage,
   subscribe,
+  getSubscription,
 };
