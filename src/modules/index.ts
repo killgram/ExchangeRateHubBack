@@ -12,6 +12,7 @@ import { deleteUser } from "./DeleteUser";
 import { getUserUsage } from "./GetUserUsage";
 import { subscribe } from "./Subscribe";
 import { getSubscription } from "./getSubscription";
+import { deleteSubscription } from "./DeleteSubscription";
 
 export {
   getWorkStatus,
@@ -28,4 +29,5 @@ export {
   getUserUsage,
   subscribe,
   getSubscription,
+  deleteSubscription,
 };

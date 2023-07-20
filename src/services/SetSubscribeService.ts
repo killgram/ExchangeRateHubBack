@@ -1,5 +1,6 @@
 import { RedisServices } from "./index";
 import { CONSTANTS } from "../configurations";
+import { v4 as uuidv4 } from "uuid";
 
 const setSubscribeService = async <T>(
   forwardCurrency: string,
@@ -19,6 +20,7 @@ const setSubscribeService = async <T>(
         tgUid: tgUid,
         type: type,
         instructions: instructions,
+        uid: uuidv4(),
       })
     );
     return true;
